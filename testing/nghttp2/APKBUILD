@@ -1,7 +1,7 @@
 # Contributor: Natanael Copa <ncopa@alpinelinux.org>
 # Maintainer:
 pkgname=nghttp2
-pkgver=1.7.1
+pkgver=1.9.1
 pkgrel=0
 pkgdesc="Experimental HTTP/2 client, server and proxy"
 url="https://nghttp2.org/"
@@ -48,6 +48,6 @@ package() {
 	make DESTDIR="$pkgdir" install || return 1
 }
 
-md5sums="0c25a963e4d1023da7f3b1a325d57737  nghttp2-1.7.1.tar.xz"
-sha256sums="f1286fdd73d45dce8aac0f45a5923c9b28037c81863a149cc236e70dd741a616  nghttp2-1.7.1.tar.xz"
-sha512sums="9d66405c588ec41d3bac05e016f870269a92eb37e212e38facbed8e1956b0922e251b6156ee811bb665e696d56b373fa03bfa1837516c69a0d88e51e1805fc1c  nghttp2-1.7.1.tar.xz"
+md5sums="731d43eecec51d522005d14b5427004f  nghttp2-1.9.1.tar.xz"
+sha256sums="b8f8a0a1abac50da1eeb9238d0dadcda9725a7fe95eb0b4f7a482beabaf2b5fb  nghttp2-1.9.1.tar.xz"
+sha512sums="937d181e62b33eaf96c9476f19d1ad1f5b0eb2f2779272f7e46d425d05903e60282abdac7d16e27cf895010a5040a2a51fc86dde1302e60d25435928d9b56df1  nghttp2-1.9.1.tar.xz"

@@ -1,7 +1,7 @@
-# Contributor: 
-# Maintainer: 
+# Contributor: Francesco Colista <fcolista@alpinelinux.org>
+# Maintainer: Francesco Colista <fcolista@alpinelinux.org>
 pkgname=byobu
-pkgver=5.66
+pkgver=5.105
 pkgrel=0
 pkgdesc="An enhancement of the GNU Screen"
 url="https://launchpad.net/byobu"
@@ -20,14 +20,17 @@ prepare() {
 
 build() {
 	cd "$_builddir"
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc 
+	make || return 1
 }
 
 package() {
 	cd "$_builddir"
-	mkdir -p "$pkgdir"
-	cp -a etc usr "$pkgdir"/
+	make DESTDIR="$pkgdir" install
 }
 
-md5sums="5bb591b5b946501b68973a5894840776  byobu_5.66.orig.tar.gz"
-sha256sums="73e37396710dd7520d717af77055dfa5bdf97770912bb4df8dae2094d6c47a08  byobu_5.66.orig.tar.gz"
-sha512sums="f3ae4ba9c8c2448dd135e85a05ddbd17585583f52dc49aa8bce9ff4b4f7bc45bd52e6400c3204e0a7bd1a2cc18e3db53e9e480ec196e3d0ab29ed3cc0b192381  byobu_5.66.orig.tar.gz"
+md5sums="9a3c8fdd6cc2e7d01f276e582f8f6fe9  byobu_5.105.orig.tar.gz"
+sha256sums="a1e7bcee02b16259866c8ff1a5a7d9e14ba58f046ec2add6a020f38293ee6cb3  byobu_5.105.orig.tar.gz"
+sha512sums="7a5afc536e390cd6b0a2985112a210c5dd1ca6d6fbe4963016d04377447e6a0b9e378a3b200b016f6c72edd227a30498d8c589bf7ae350e5f47f55ccccb05948  byobu_5.105.orig.tar.gz"
